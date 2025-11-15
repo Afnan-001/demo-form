@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Income Growth Application',
+  title: 'Income Boost Form',
   description: 'Explore financial opportunity options. Apply now to get started!',
 };
 
