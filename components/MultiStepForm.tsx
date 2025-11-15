@@ -17,12 +17,13 @@ import PositionStep from '@/components/form/steps/PositionStep';
 import CommissionStep from '@/components/form/steps/CommissionStep';
 import LicensingStep from '@/components/form/steps/LicensingStep';
 import SuccessPage from '@/components/form/SuccessPage';
+import LandingPage from '@/components/form/LandingPage';
 import { FormData } from '@/types/form';
 
 const TOTAL_STEPS = 10;
 
 export default function MultiStepForm() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0); // Start at 0 for landing page
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     country: '',
@@ -58,6 +59,11 @@ export default function MultiStepForm() {
     }
   };
 
+  const handleProceed = () => {
+    setCurrentStep(1);
+    setStepValid(false);
+  };
+
   const handleSubmit = async () => {
     if (stepValid) {
       try {
@@ -78,6 +84,10 @@ export default function MultiStepForm() {
 
   if (isSubmitted) {
     return <SuccessPage formData={formData} />;
+  }
+
+  if (currentStep === 0) {
+    return <LandingPage onProceed={handleProceed} />;
   }
 
   return (

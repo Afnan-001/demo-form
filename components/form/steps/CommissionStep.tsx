@@ -17,8 +17,7 @@ export default function CommissionStep({ value, onChange, onValidChange }: StepP
           Commission-Based Income
         </h2>
         <p className="text-gray-700 mb-2">
-          Are you open to self-employed commission-based income with an uncapped earning
-          potential in the highest paid financial services industry?
+          Are you open to self-employed commission-based income, stock options, dividends, and royalty income with an uncapped earning potential in the highest paid financial services industry?
         </p>
         <p className="text-sm text-red-600">* Required</p>
       </div>
